@@ -1,0 +1,28 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "watch": "chokidar './wp-content/themes/dw/resources/js/app/**/*.js' './wp-content/themes/dw/resources/css/**/*' -c 'vite build'",
+    "serve" : "browser-sync start --proxy 'http://wordpress-201.test' --files 'wp-content/themes/dw/public/**/*' --no-https --port 8000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Juliengaspar/portfoliot"
+  },
+  "keywords": [],
+  "author": "Julien Gaspar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Juliengaspar/portfolioissues"
+  },
+  "homepage": "https://github.com/Juliengaspar/portfolio#readme",
+  "devDependencies": {
+    "browser-sync": "^3.0.3",
+    "chokidar": "^4.0.3",
+    "glob": "^11.0.1",
+    "saas": "^1.0.0",
+    "vite": "^6.2.2"
+  }
+}
