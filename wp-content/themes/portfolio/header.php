@@ -9,12 +9,12 @@
     <title>Titre de la page</title>
 </head>
 <body>
-<nav>
-    <h1>Titre invisible</h1>
+<nav class="nav__header">
+    <h1 class="title__page">Titre invisible</h1>
     <ul>
         <li></li>
     </ul>
 </nav>
-<header>
-    <h2></h2>
+<header class="header">
+    <h2 class="header__title"></h2>
 </header>
