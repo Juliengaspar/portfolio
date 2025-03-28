@@ -1,11 +1,13 @@
 <?php
 /*ici va se trouver tous les function php qu'on développera pour plus tard */
+/*charge le champs srf*/
+include_once ('fields.php');
+
 
 //activer la sesion php
 if (session_status()===PHP_SESSION_NONE){
     session_start();
 }
-
 
 // Gutenberg est le nouvel éditeur de contenu propre à Wordpress
 // il ne nous intéresse pas pour l'utilisation du thème que nous
@@ -25,10 +27,11 @@ add_action( 'wp_enqueue_scripts', function() {
     wp_dequeue_style( 'global-styles' );
 }, 20 );
 
+
 register_post_type('portfolio', [
     'label' => 'Portfolio',
     'description' => 'Mon portfolio pour mon projet pour le cours de design web ',
-    'menu_position' => 1,
+    'menu_position' => 5,
     'menu_icon' => 'dashicons-portfolio',
     'public' => true,
     'has_archive' => true,
@@ -37,5 +40,3 @@ register_post_type('portfolio', [
     ],
     'supports' => ['title','excerpt','editor','thumbnail'],
 ]);
-
-?>
