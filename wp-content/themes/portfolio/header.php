@@ -13,6 +13,7 @@
     <meta name="author" content="Julien Gaspar"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#fafafa">
+    <link rel="stylesheet" type="text/css" href="src/css/reset.css"/>
     <link rel="stylesheet" href="./src/css/header.css">
 <!--    <script src="./src/js/main.js" type="module" defer></script>-->
 </head>

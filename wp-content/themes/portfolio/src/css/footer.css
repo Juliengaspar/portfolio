@@ -1,0 +1,70 @@
+footer{
+    font-family: "Cormorant Garamond" ;
+    background: #000000;
+    color: #fff;
+}
+.footer{
+
+}
+.logo-doré{
+    max-width: 125px;
+    max-height: 125px;
+    width: 100%;
+    height: auto;
+}
+
+.footer__title>h2{
+    font-size: 1.88rem;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+.footer__title>p{
+    font-size: 1.88rem;
+    font-weight: 400;
+
+}
+.navigation__title{
+    font-size: 1.88rem;
+    font-weight: 400;
+}
+.navigation__title>li{
+    font-size: 1.375em;
+    font-weight: 100;
+}
+
+.copyright{
+
+    background: #4F0000;
+    width: 100%;
+}
+
+.lien-contact{
+    text-decoration: none;
+    background: #F7D87F;
+    color: #000000;
+}
+.contact title{
+    font-size: 1.88rem;
+}
+.lien-contact{
+    padding: 0.5em 1em;
+    background: #F7D87F;
+}
+
+.reseauxSociaux{
+    position: relative;
+    font-weight: 400;
+}
+.reseauxSociaux::after{
+    content: "\f082";
+    font-family: FontAwesome, serif;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    color: #000;
+    font-size: 18px;
+    padding-right: 0.5em;
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
