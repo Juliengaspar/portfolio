@@ -20,28 +20,33 @@
 <body>
 <footer>
     <section class="footer">
+        <div class="logo-doré">
         <img src="src/img/logo-dore-cercle-blanc.png" alt=" cercle doré en forme de G dans un J avec un cercle blanc entre les 2 forme Portfolion" class="logo-doré">
+        </div>
+        <section class="footer__about">
+
         <section class="footer__title">
-        <h2>Mon Portfolio</h2>
-        <p class="email">jgaspar@oginformatique.be</p>
-        <p class="tel">+32 486 95 77 22 </p>
+            <h2>Mon Portfolio</h2>
+            <p class="email">jgaspar@oginformatique.be</p>
+            <p class="tel">+32 486 95 77 22 </p>
         </section>
         <section class="footer__info">
-        <h2 class="email"></h2>
-        <nav class="navigation__footer">
-            <h3 class="navigation__title">Navigation</h3>
-            <ul>
-            <li>Accueil</li>
-            <li>Projets</li>
-            <li>À propos</li>
-            <li>Contact</li>
+            <h2 class="email"></h2>
+            <nav class="navigation__footer">
+                <h3 class="navigation__title">Navigation</h3><ul>
+                <li>Accueil</li>
+                <li>Projets</li>
+                <li>À propos</li>
+                <li>Contact</li>
             </ul>
         </nav>
-        <section class="contact">
-            <h2 class="contact title">M’envoyer Un message</h2>
-            <a href="./contacte.php" class="lien-contact">Contactez mois</a>
+        </section>
+        <section class="footer__title contact">
+            <h2 class="contact_title">M’envoyer Un message</h2>
+            <a href="./src/page-portfolio/Contact.php" class="lien-contact">Contactez mois</a>
         </section>
     </section>
+        </section>
     <section class="copyright">
         <h2 class="copyright__title">Copyright Mon  CV  © 2024  C.V  | Contact | Vie  privée  </h2>
       <img src="#" class="reseauxSociaux" alt="icone represnetant un aplication mobile de resaux sociaux facebook ">

@@ -3,10 +3,8 @@ footer{
     background: #000000;
     color: #fff;
 }
-.footer{
 
-}
-.logo-doré{
+.logo-doré{;
     max-width: 125px;
     max-height: 125px;
     width: 100%;
@@ -23,6 +21,12 @@ footer{
     font-weight: 400;
 
 }
+
+.footer__about{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
 .navigation__title{
     font-size: 1.88rem;
     font-weight: 400;
@@ -43,12 +47,23 @@ footer{
     background: #F7D87F;
     color: #000000;
 }
-.contact title{
+.contact_title{
     font-size: 1.88rem;
+    max-width: 200px;
+    margin: 10px;
+}
+.footer__title{
+    margin: 0 25%;
 }
 .lien-contact{
-    padding: 0.5em 1em;
-    background: #F7D87F;
+    padding: 0.5em 2em;
+    background: #E63946;
+    color: #fff;
+    font-size: 1.375em;
+    font-weight: 400;
+    text-decoration: none;
+    border-radius: 10px;
+    margin: 10px;
 }
 
 .reseauxSociaux{
