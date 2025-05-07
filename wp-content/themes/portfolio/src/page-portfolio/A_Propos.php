@@ -8,17 +8,17 @@ get_header();
 </head>
 <body>
     <section>
-        <h2></h2>
+        <h2>A propos de moi</h2>
             <p></p>
     </section>
     <section>
-        <h2></h2>
+        <h2>Mes compétences</h2>
             <ul>
                 <li></li>
             </ul>
     </section>
     <section>
-    <h2></h2>
+    <h2>Mon parcours scolaire</h2>
         <section>
             <h3></h3>
                 <p></p>
@@ -30,7 +30,7 @@ get_header();
     </section>
 
     <section>
-        <h3></h3>
+        <h2>Mes passions</h2>
         <p></p>
         <img src="" alt="">
     </section>

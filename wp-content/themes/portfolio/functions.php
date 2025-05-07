@@ -31,7 +31,7 @@ add_action( 'wp_enqueue_scripts', function() {
 register_post_type('portfolio',[
     'label' => 'Portfolios',
     'description' => 'Mon portfolio pour mon projet pour le cours de design web',
-    'menu_position' => 1,
+    'menu_position' => 5,
     'menu_icon' => 'dashicons-portfolio',
     'public' => true,
     'has_archive' => true,
@@ -40,5 +40,3 @@ register_post_type('portfolio',[
     ],
     'supports' => ['title','excerpt','editor','thumbnail'],
 ]);
-
-?>
