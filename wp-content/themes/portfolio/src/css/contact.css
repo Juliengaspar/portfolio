@@ -1,0 +1,69 @@
+body{
+    background-color: #8C9CCD;
+    margin: 5%;
+    font-family: Didot;
+}
+
+h2{
+    font-size: 2rem;
+    margin-bottom: 2%;
+    font-weight: 700;
+}
+
+.contact{
+    display: flex;
+}
+.form{
+
+    width: 40%;
+    height: auto;
+    background-color: black;
+    color: white;
+}
+.form__elements{
+    margin: 5%;
+}
+.form__elements>label{
+    display: block;
+    margin-bottom: 1%;
+}
+.subjectMessage{
+    background-color: black;
+    color: white;
+
+}
+.subjectMessage>select{
+    border: 1px solid #E5C589;
+}
+
+span{
+    color: #E63946;
+}
+
+input{
+    background-color: black;
+    border: 1px solid #E5C589;
+}
+button{
+    background-color: #E63946;
+    color: white;
+    border: none;
+}
+.coordonnees{
+    margin-left: 60%;
+}
+.coordonnee__info{
+    margin-bottom: 2%;
+    width: 50%;
+}
+.coordonnee__info:first-of-type{
+    border-bottom: 1px solid black;
+}
+.apps>li{
+    display: inline;
+    margin: 0 2%;
+}
+li>img{
+    width: 25%;
+    height: 50%;
+}

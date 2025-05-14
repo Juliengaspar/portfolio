@@ -1,0 +1,134 @@
+body{
+    background-color: #8C9CCD;
+    margin: 5%;
+    font-family: Didot;
+}
+
+.title{
+    font-size: 2rem;
+    margin-left: 5%;
+    font-style: italic;
+    margin-bottom: 5%;
+    font-weight: 700;
+}
+.title>p{
+    font-weight: 900;
+}
+a{
+    cursor: pointer;
+}
+.about__me{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.about__me__content{
+    width: 50%;
+    line-height: 1vh;
+    margin: 5%;
+}
+
+.about__me__content>h2{
+    font-size: 2rem;
+    margin-left: 5%;
+    font-style: italic;
+    margin-bottom: 5%;
+    font-weight: 700;
+}
+.about__me__content>p{
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+.about__me__image{
+    flex: 1 1 200px;
+    max-width: 300px;
+    display: flex;
+    justify-content: center;
+}
+.about__me__image>img{
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+/*Parti lisgte de parcours scholaire*/
+.school__path{
+
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.school__info{
+    display: flex;
+}
+.school__left{
+    margin-left: 5%;
+    width: 50%;
+}
+.school__left>h3{
+    width: 100%;
+    font-size: 1.5rem;
+    margin-bottom: 2%;
+    margin-left: 2%;
+}
+
+h3{
+}
+
+.school__left>p{
+    font-size: 1.1rem;
+    margin: 2%;
+}
+
+.school-arrow {
+    width: 5%;
+    height: 100%;
+    background-color: white;
+    position: relative;
+}
+
+.school-arrow::before {
+    content: '|';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: solid white;
+    border-width: 0 6px 6px 0;
+    display: inline-block;
+    padding: 10px;
+    transform: rotate(-135deg) translateX(-50%);
+}
+
+.school__description{
+    line-height: 2vh;
+    width: 50%;
+    margin-left: 50%;
+    margin-right: 5%;
+}
+
+.contenus__description{
+    text-align: left;
+    font-weight: 800;
+}
+.passion__me{
+    width: 50%;
+    margin: 5%;
+    line-height: 3vh;
+}
+.passion__me>h2{
+    width: 50%;
+}
+.passion__me>p{
+    font-size: 1rem;
+    width: 50%;
+}
+.passion__me__img{
+    display: flex;
+    margin-left: 90%;
+    align-items: center;
+}
