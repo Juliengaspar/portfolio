@@ -1,12 +1,29 @@
 <?php
 /*ici va se trouver tous les function php qu'on développera pour plus tard */
 // Charger les champs ACF exportés :
-include_once('./fields.php');
+require_once get_template_directory() . '/fields.php';
 
 //activer la sesion php
 if (session_status()===PHP_SESSION_NONE){
     session_start();
 }
+
+function __hepl(string $translation, array $replacements = [])
+{
+// 1. Récupérer la traduction de la phrase présente dans $translation
+    $base = __($translation, 'hepl-trad');
+
+// 2. Remplacer toutes les occurrences des variables par leur valeur
+    foreach ($replacements as $key => $value) {
+        $variable = ':' . $key;
+        $base = str_replace($variable, $value, $base);
+    }
+
+// 3. Retourner la traduction complète.
+    return $base;
+}
+
+
 
 // Gutenberg est le nouvel éditeur de contenu propre à Wordpress
 // il ne nous intéresse pas pour l'utilisation du thème que nous
@@ -28,15 +45,33 @@ add_action( 'wp_enqueue_scripts', function() {
 //
 //add_theme_support('post-thumbnails', ['portfolio']);
 //register_post_type( string $post_type, array|string $args = array() ): WP_Post_Type|WP_Error
-register_post_type('portfolio',[
-    'label' => 'Portfolios',
-    'description' => 'Mon portfolio pour mon projet pour le cours de design web',
-    'menu_position' => 5,
-    'menu_icon' => 'dashicons-portfolio',
-    'public' => true,
-    'has_archive' => true,
-    'rewrite' => [
-        'slug' => 'portfolios',
-    ],
-    'supports' => ['title','excerpt','editor','thumbnail'],
-]);
+function creer_post_type_portfolio() {
+    register_post_type('portfolio', [
+        'label' => 'Portfolios',
+        'description' => 'Mon portfolio pour mon projet pour le cours de design web',
+        'menu_position' => 5,
+        'menu_icon' => 'dashicons-portfolio',
+        'public' => true,
+        'has_archive' => true,
+        'rewrite' => [
+            'slug' => 'portfolios',
+        ],
+        'supports' => ['title', 'excerpt', 'editor', 'thumbnail'],
+        'show_in_rest' => true, // Pour compatibilité avec l'éditeur Gutenberg
+    ]);
+}
+add_action('init', 'creer_post_type_portfolio');
+
+if( function_exists('acf_add_options_page') ) {
+    acf_add_options_page();
+}
+
+if( function_exists('acf_add_options_page') ) {
+    acf_add_options_page(array(
+        'page_title'    => 'Paramètres du footer',
+        'menu_title'    => 'Footer',
+        'menu_slug'     => 'footer-settings',
+        'capability'    => 'edit_posts',
+        'redirect'      => false
+    ));
+}

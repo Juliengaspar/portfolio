@@ -1,4 +1,7 @@
 <?php
+/*
+Template Name: Accueil
+*/
 get_header();
 ?>
 <!doctype html>
@@ -16,6 +19,9 @@ get_header();
         <p class="form__elements">
             <label class="lastName" for="lastName">Nom<span>*</span></label>
             <input class="lastName" type="text" name="lastName" id="lastName">
+            <?php if(isset($errors['lastName'])): ?>
+        <p class="field__error"><?= $errors['lastName']; ?></p>
+        <?php endif; ?>
         </p>
 
         <p class="form__elements">

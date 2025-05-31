@@ -1,4 +1,7 @@
 <?php
+/*
+Template Name: Accueil
+*/
 get_header();
 ?>
 <!doctype html>
@@ -8,9 +11,16 @@ get_header();
 </head>
 <body>
     <section>
-        <h2></h2>
+        <h2>Projets</h2>
         <section>
-           <h3></h3>
+           <h3>Développent WEB</h3>
+            <p></p>
+            <div>
+                <img src="" alt="">
+            </div>
+        </section>
+        <section>
+           <h3>Créations Graphiques 2D</h3>
             <p></p>
             <div>
                 <img src="" alt="">

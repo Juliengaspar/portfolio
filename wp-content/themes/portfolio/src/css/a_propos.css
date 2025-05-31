@@ -1,7 +1,16 @@
 body{
     background-color: #8C9CCD;
-    margin: 5%;
     font-family: Didot;
+}
+
+.about__me__title{
+    background-color: black;
+    font-size: 3rem;
+    text-align: center;
+    width: 100%;
+    margin: 5% 0;
+    color: white;
+    padding: 1.5rem;
 }
 
 .title{
@@ -54,6 +63,19 @@ a{
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+.competences{
+    background-color: #E63946;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 5%;
+
+}
+.competence__picture>li{
+    display: inline;
+}
+
+
 /*Parti lisgte de parcours scholaire*/
 .school__path{
 
@@ -64,6 +86,7 @@ a{
 
 .school__info{
     display: flex;
+    margin-bottom: 5%;
 }
 .school__left{
     margin-left: 5%;
@@ -76,9 +99,9 @@ a{
     margin-left: 2%;
 }
 
-h3{
+#histoire_art__archeologie .contenus__description{
+    margin-right: 75%;
 }
-
 .school__left>p{
     font-size: 1.1rem;
     margin: 2%;
