@@ -1,11 +1,19 @@
 <?php
 /*
-Template Name: Accueil
+Template Name: A_Propos
 */
 get_header();
 ?>
-<!doctype html>
-<html lang="fr-be">
+<meta charset="UTF-8">
+<title>Aceuilles</title>
+<meta name="description" content=" Premiers pages aceuille du projet portfolio fait avec woordpresse ">
+<meta name="keywords" content="portfolio, Projet-web, Julien, woordpresse, formation hepl"/>
+<meta name="author" content="Julien Gaspar"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" sizes="16x16" href="../img/portfolios-small.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../img/portfolios-medium.png">
+<link rel="icon" type="image/png" sizes="162x162" href="../img/portfolios-big.png">
 <link rel="stylesheet" href="../css/a_propos.css">
 <link rel="stylesheet" href="../css/reset.css">
 <head>

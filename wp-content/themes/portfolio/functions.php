@@ -75,3 +75,38 @@ if( function_exists('acf_add_options_page') ) {
         'redirect'      => false
     ));
 }
+
+function register_custom_post_type_projets() {
+    register_post_type('projet', [
+        'label' => 'Projets',
+        'public' => true,
+        'has_archive' => true,
+        'rewrite' => ['slug' => 'projets'],
+        'supports' => ['title', 'editor', 'thumbnail'],
+        'show_in_rest' => true,
+    ]);
+}
+add_action('init', 'register_custom_post_type_projets');
+
+function creer_cpt_projets() {
+    register_post_type('projet', [
+        'labels' => [
+            'name' => 'Projets',
+            'singular_name' => 'Projet',
+            'add_new' => 'Ajouter un projet',
+            'add_new_item' => 'Ajouter un nouveau projet',
+            'edit_item' => 'Modifier le projet',
+            'new_item' => 'Nouveau projet',
+            'view_item' => 'Voir le projet',
+            'search_items' => 'Rechercher un projet',
+            'not_found' => 'Aucun projet trouvé',
+        ],
+        'public' => true,
+        'has_archive' => true,
+        'rewrite' => ['slug' => 'projets'],
+        'supports' => ['title', 'editor', 'thumbnail'],
+        'menu_icon' => 'dashicons-portfolio',
+    ]);
+}
+add_action('init', 'creer_cpt_projets');
+
