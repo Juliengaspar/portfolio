@@ -42,22 +42,30 @@ add_action( 'wp_enqueue_scripts', function() {
     // Remove inline global CSS on the front end.
     wp_dequeue_style( 'global-styles' );
 }, 20 );
+
+//Activer les miniatures pour les articles
+add_theme_support('post-thumbnails');
+
 //
 //add_theme_support('post-thumbnails', ['portfolio']);
 //register_post_type( string $post_type, array|string $args = array() ): WP_Post_Type|WP_Error
+
+function mon_theme_enqueue_styles() {
+    wp_enqueue_style('reset-css', get_template_directory_uri() . '/css/reset.css', array(), '1.0');
+    wp_enqueue_style('style-principal', get_template_directory_uri() . '/css/style.css', array('reset-css'), '1.0');
+}
+add_action('wp_enqueue_scripts', 'mon_theme_enqueue_styles');
+
+
 function creer_post_type_portfolio() {
     register_post_type('portfolio', [
         'label' => 'Portfolios',
-        'description' => 'Mon portfolio pour mon projet pour le cours de design web',
-        'menu_position' => 5,
-        'menu_icon' => 'dashicons-portfolio',
         'public' => true,
         'has_archive' => true,
-        'rewrite' => [
-            'slug' => 'portfolios',
-        ],
+        'rewrite' => ['slug' => 'portfolios'],
         'supports' => ['title', 'excerpt', 'editor', 'thumbnail'],
-        'show_in_rest' => true, // Pour compatibilité avec l'éditeur Gutenberg
+        'menu_icon' => 'dashicons-portfolio',
+        'show_in_rest' => true,
     ]);
 }
 add_action('init', 'creer_post_type_portfolio');
@@ -76,24 +84,11 @@ if( function_exists('acf_add_options_page') ) {
     ));
 }
 
-function register_custom_post_type_projets() {
-    register_post_type('projet', [
-        'label' => 'Projets',
-        'public' => true,
-        'has_archive' => true,
-        'rewrite' => ['slug' => 'projets'],
-        'supports' => ['title', 'editor', 'thumbnail'],
-        'show_in_rest' => true,
-    ]);
-}
-add_action('init', 'register_custom_post_type_projets');
-
 function creer_cpt_projets() {
     register_post_type('projet', [
         'labels' => [
             'name' => 'Projets',
             'singular_name' => 'Projet',
-            'add_new' => 'Ajouter un projet',
             'add_new_item' => 'Ajouter un nouveau projet',
             'edit_item' => 'Modifier le projet',
             'new_item' => 'Nouveau projet',
@@ -106,7 +101,32 @@ function creer_cpt_projets() {
         'rewrite' => ['slug' => 'projets'],
         'supports' => ['title', 'editor', 'thumbnail'],
         'menu_icon' => 'dashicons-portfolio',
+        'show_in_rest' => true,
     ]);
 }
+
 add_action('init', 'creer_cpt_projets');
 
+if (function_exists('acf_add_options_page')) {
+    acf_add_options_page([
+        'page_title'    => 'Paramètres du footer',
+        'menu_title'    => 'Footer',
+        'menu_slug'     => 'footer-settings',
+        'capability'    => 'edit_posts',
+        'redirect'      => false
+    ]);
+}
+function register_custom_post_type_project() {
+    register_post_type('project', [
+        'labels' => [
+            'name' => 'Projets',
+            'singular_name' => 'Projet',
+        ],
+        'public' => true,
+        'has_archive' => true,
+        'rewrite' => ['slug' => 'projets'],
+        'supports' => ['title', 'editor', 'thumbnail'],
+        'show_in_rest' => true,
+    ]);
+}
+add_action('init', 'register_custom_post_type_project');
