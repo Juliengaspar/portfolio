@@ -51,6 +51,11 @@ footer {
     margin-bottom: 2.5%;
     line-height: 5vh;
 }
+.redirection>a{
+    text-decoration: none;
+    color: white;
+
+}
 
 .footer__title__contact>h2{
     font-size: 3rem;

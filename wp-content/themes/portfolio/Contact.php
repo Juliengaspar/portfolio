@@ -1,9 +1,6 @@
+<?php /* Template name: Template "contact*/ ?>
+<?php get_header(); ?>
 <?php
-/*
-Template Name: Contact
-*/
-get_header();
-
 // Traitement du formulaire
 $success = '';
 $errors = [];
@@ -42,8 +39,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['envoyer'])) {
 <head>
     <meta charset="UTF-8">
     <title>Contact</title>
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/src/css/reset.css">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/src/css/a_propos.css">
+<!--    <link rel="stylesheet" href="--><?php //echo get_template_directory_uri(); ?><!--/src/css/reset.css">-->
+<!--    <link rel="stylesheet" href="--><?php //echo get_template_directory_uri(); ?><!--/src/css/a_propos.css">-->
 </head>
 <body class="contact__me">
 <section>

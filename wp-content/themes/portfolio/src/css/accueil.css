@@ -5,6 +5,20 @@ body{
     background-color:#8C9CCD;
     color: #000000;
 }
+.accueil{
+    margin: 5%;
+
+}
+
+.accueil>h1::after{
+    content: PORTFOLIO;
+    font-size: 3rem;
+    background-color: black;
+
+
+
+}
+
 
 .acceuille__titile{
     text-align: center;

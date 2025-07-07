@@ -1,13 +1,9 @@
-<?php
-/*
-Template Name: a_propos
-*/
-get_header();
-?>
+<?php /* Template name: Template "a_propos"*/ ?>
+<?php get_header(); ?>
 
 <!-- Fichiers CSS spécifiques -->
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>./src/css/reset.css">
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>./src/css/a_propos.css">
+<!--<link rel="stylesheet" href="--><?php //echo get_template_directory_uri(); ?><!--./src/css/reset.css">-->
+<!--<link rel="stylesheet" href="--><?php //echo get_template_directory_uri(); ?><!--./src/css/a_propos.css">-->
 
 <section class="about__me">
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -19,9 +15,16 @@ get_header();
         </section>
 
         <div class="about__me__image">
-            <?php $image = get_field('photo_profile'); ?>
-            <?php if ($image) : ?>
-                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
+            <!-- Image d'introduction -->
+            <?php
+            $image = get_field('photo_profile');
+            // var_dump($image); // temporaire pour voir ce qu'il y a dans le fichiers
+
+            if ($image) :
+                ?>
+                <div class="photo_profile">
+                    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
+                </div>
             <?php endif; ?>
         </div>
 
@@ -29,9 +32,11 @@ get_header();
         <section>
             <h2 class="title">Mes compétences</h2>
             <div class="competences">
-                <?php $image_comp = get_field('galerie__picture__competence'); ?>
-                <?php if ($image_comp) : ?>
-                    <img src="<?php echo esc_url($image_comp['url']); ?>" alt="<?php echo esc_attr($image_comp['alt']); ?>">
+                <?php $galerie = get_field('galerie__picture__competence'); ?>
+                <?php if ($galerie) : ?>
+                    <?php foreach ($galerie as $image) : ?>
+                        <img class="image__competence" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
+                    <?php endforeach; ?>
                 <?php endif; ?>
             </div>
         </section>
@@ -68,9 +73,16 @@ get_header();
             <h2 class="title">Mes passions</h2>
             <p><?php the_field('description__passion'); ?></p>
 
-            <?php $image_loisir = get_field('passion__image'); ?>
-            <?php if ($image_loisir) : ?>
-                <img class="passion__me__img" src="<?php echo esc_url($image_loisir['url']); ?>" alt="<?php echo esc_attr($image_loisir['alt']); ?>">
+            <!-- Image d'introduction -->
+            <?php
+            $image_loisir = get_field('passion__image');
+            // var_dump($image); // temporaire pour voir ce qu'il y a dans le fichiers
+
+            if ($image_loisir) :
+                ?>
+                <div class="passion__image">
+                    <img src="<?php echo esc_url($image_loisir['url']); ?>" alt="<?php echo esc_attr($image_loisir['alt']); ?>">
+                </div>
             <?php endif; ?>
         </section>
 

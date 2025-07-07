@@ -64,6 +64,24 @@ a{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+
+.competences {
+    display: flex;
+    gap: 1rem; /* espace égal entre chaque image */
+    background-color: red;
+    padding: 1rem;
+    overflow-x: auto; /* pour scroll horizontal si trop large */
+}
+
+.image__competence {
+    height: 10%; /* ou la taille que tu veux */
+    object-fit: cover;
+    border-radius: 5px;
+    width: 5%;
+}
+
+
+
 .competences{
     background-color: #E63946;
     border-radius: 20px;

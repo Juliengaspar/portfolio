@@ -2,40 +2,44 @@
 /*
 Template Name: Accueil
 */
-get_header(); // Inclut le header.php
 ?>
 
+<?php get_header(); ?>
 <!-- Test pour voir si le bon template est chargé -->
 <!-- Ceci est le TEMPLATE ACCUEIL -->
 
 <!-- Feuilles de style spécifiques à cette page -->
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/src/css/reset.css">
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/src/css/accueil.css">
+<!--<link rel="stylesheet" href="--><?php //echo get_template_directory_uri(); ?><!--/src/css/reset.css">-->
+<!--<link rel="stylesheet" href="--><?php //echo get_template_directory_uri(); ?><!--/src/css/accueil.css">-->
 
 <section class="accueil">
+    <h1>Portfolio</h1>
+<!--    --><?php //if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-    <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+        <!-- Image d'introduction -->
+        <?php
+        $imagelogo = get_field('image_intro');
+       // var_dump($image); // temporaire pour voir ce qu'il y a dans le fichiers
+
+        if ($imagelogo) :
+            ?>
+            <div class="image_intro">
+                <img src="<?php echo esc_url($imagelogo['url']); ?>" alt="<?php echo esc_attr($imagelogo['alt']); ?>">
+            </div>
+        <?php endif; ?>
 
         <!-- Titre principal -->
         <?php $titre = get_field('titre_accueil'); ?>
         <?php if ($titre): ?>
-            <h1><?php echo esc_html($titre); ?></h1>
+            <h2><?php echo esc_html($titre); ?></h2>
         <?php endif; ?>
-
-        <!-- Image d'introduction -->
-        <?php $img = get_field('image_intro'); ?>
-        <?php if ($img): ?>
-            <div class="image_intro">
-                <img src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_attr($img['alt']); ?>">
-            </div>
-        <?php endif; ?>
-
         <!-- Texte d’introduction -->
         <?php $texte_intro = get_field('texte_intro'); ?>
         <?php if ($texte_intro): ?>
             <p class="intro"><?php echo wp_kses_post($texte_intro); ?></p>
         <?php endif; ?>
-
+    <section>
+        <h2>Dévelopement web</h2>
         <!-- Liste des projets (champ répéteur) -->
         <?php if (have_rows('projets_accueil')): ?>
             <section class="projets">
@@ -53,6 +57,7 @@ get_header(); // Inclut le header.php
                 </div>
             </section>
         <?php endif; ?>
+    </section>
 
         <!-- Lien vers tous les projets -->
         <?php $lien = get_field('lien_bouton_projets'); ?>
@@ -62,7 +67,7 @@ get_header(); // Inclut le header.php
             </a>
         <?php endif; ?>
 
-    <?php endwhile; endif; ?>
+<!--    --><?php //endwhile; endif; ?>
 
 </section>
 

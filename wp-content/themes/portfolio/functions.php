@@ -8,6 +8,42 @@ if (session_status()===PHP_SESSION_NONE){
     session_start();
 }
 
+
+function dw_get_navigation_links(string $location): array
+{
+    // Récupérer l'objet WP pour le menu à la location $location
+    $locations = get_nav_menu_locations();
+
+    if(! isset($locations[$location])) {
+        return [];
+    }
+
+    $nav_id = $locations[$location];
+    $nav = wp_get_nav_menu_items($nav_id);
+
+    // Transformer le menu en un tableau de liens, chaque lien étant un objet personnalisé
+
+    $links = [];
+
+    foreach ($nav as $post) {
+        $link = new stdClass();
+        $link->href = $post->url;
+        $link->label = $post->title;
+        $link->icon = get_field('icon', $post);
+
+        $links[] = $link;
+    }
+
+    // Retourner ce tableau d'objets (liens).
+
+    return $links;
+}
+
+if (function_exists('acf_add_options_page')) {
+    acf_add_options_page();
+}
+
+
 function __hepl(string $translation, array $replacements = [])
 {
 // 1. Récupérer la traduction de la phrase présente dans $translation
@@ -49,12 +85,39 @@ add_theme_support('post-thumbnails');
 //
 //add_theme_support('post-thumbnails', ['portfolio']);
 //register_post_type( string $post_type, array|string $args = array() ): WP_Post_Type|WP_Error
+function mon_portfolio_styles() {
+    // 1. Fichier reset.css pour toutes les pages
+    wp_enqueue_style('reset-css', get_template_directory_uri() . '/src/css/reset.css', [], time());
 
-function mon_theme_enqueue_styles() {
-    wp_enqueue_style('reset-css', get_template_directory_uri() . '/css/reset.css', array(), '1.0');
-    wp_enqueue_style('style-principal', get_template_directory_uri() . '/css/style.css', array('reset-css'), '1.0');
+    // 2. Styles selon les templates ou fichiers
+    if (is_page_template('front-page.php')) {
+        wp_enqueue_style('accueil-css', get_template_directory_uri() . '/src/css/accueil.css' , [], time());
+    }
+
+    if (is_page_template('contact.php')) {
+        wp_enqueue_style('contact-css', get_template_directory_uri() . '/src/css/contact.css' , [], time());
+    }
+
+    if (is_page_template('projets.php')) {
+        wp_enqueue_style('projets-css', get_template_directory_uri() . '/src/css/projets.css' , [], time());
+    }
+
+    if (is_page_template('single_project.php') || is_singular('project')) {
+        wp_enqueue_style('single-project-css', get_template_directory_uri() . '/src/css/single_project.css' , [], time());
+    }
+    if (is_page_template('a_propos.php') || is_singular('project')) {
+        wp_enqueue_style('a_propos-css', get_template_directory_uri() . '/src/css/a_propos.css' , [], time());
+    }
+
+    // 3. Header et footer toujours présents
+    wp_enqueue_style('header-css', get_template_directory_uri() . '/src/css/header.css' , [], time());
+    wp_enqueue_style('footer-css', get_template_directory_uri() . '/src/css/footer.css' , [], time());
 }
-add_action('wp_enqueue_scripts', 'mon_theme_enqueue_styles');
+add_action('wp_enqueue_scripts', 'mon_portfolio_styles');
+
+
+
+
 
 
 function creer_post_type_portfolio() {
@@ -70,9 +133,10 @@ function creer_post_type_portfolio() {
 }
 add_action('init', 'creer_post_type_portfolio');
 
-if( function_exists('acf_add_options_page') ) {
+if(function_exists('acf_add_options_page')){
     acf_add_options_page();
 }
+
 
 if( function_exists('acf_add_options_page') ) {
     acf_add_options_page(array(
@@ -87,7 +151,7 @@ if( function_exists('acf_add_options_page') ) {
 function creer_cpt_projets() {
     register_post_type('projet', [
         'labels' => [
-            'name' => 'Projets',
+            'name' => 'Projets__galeries',
             'singular_name' => 'Projet',
             'add_new_item' => 'Ajouter un nouveau projet',
             'edit_item' => 'Modifier le projet',
@@ -104,8 +168,8 @@ function creer_cpt_projets() {
         'show_in_rest' => true,
     ]);
 }
-
 add_action('init', 'creer_cpt_projets');
+
 
 if (function_exists('acf_add_options_page')) {
     acf_add_options_page([
@@ -116,17 +180,4 @@ if (function_exists('acf_add_options_page')) {
         'redirect'      => false
     ]);
 }
-function register_custom_post_type_project() {
-    register_post_type('project', [
-        'labels' => [
-            'name' => 'Projets',
-            'singular_name' => 'Projet',
-        ],
-        'public' => true,
-        'has_archive' => true,
-        'rewrite' => ['slug' => 'projets'],
-        'supports' => ['title', 'editor', 'thumbnail'],
-        'show_in_rest' => true,
-    ]);
-}
-add_action('init', 'register_custom_post_type_project');
+
