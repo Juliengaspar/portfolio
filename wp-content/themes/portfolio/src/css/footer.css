@@ -2,17 +2,24 @@ footer {
     font-family: Didot, 'arial', sans-serif;
     background-color: #000000;
     color: #ffffff;
+    margin: 10% 0 0 0 ;
 
 }
+
+p{
+    font-family: "Cormorant Garamond";
+    font-weight: 100;
+}
+
 .footer__about{
 }
 .logo-doré{
 
 }
 .logo-doré{
-    width: 50%;
+    width: 90%;
     height: auto;
-    margin: 25% -10%;
+    margin: 1% -5%;
 }
 
 .footer__about{
@@ -21,6 +28,7 @@ footer {
     margin-top: -5%;
     margin-left: 1%;
     margin-bottom: -5%;
+    grid-gap: 5%;
 }
 
 .footer__title,
@@ -34,16 +42,18 @@ footer {
     font-size: 3rem;
     font-family: Didot;
     margin-bottom: 2%;
+
 }
 .footer__title>p{
-    margin-bottom: 2%;
+    margin-bottom: 5%;
+    font-size: 1.5rem;
 }
 
 
 .navigation__title{
     font-size: 3rem;
     font-family: Didot;
-    margin-bottom: 1%;
+    margin-bottom: 5%;
 }
 .redirection{
     font-size: 1rem;
@@ -54,6 +64,10 @@ footer {
 .redirection>a{
     text-decoration: none;
     color: white;
+
+}
+.redirection>a:hover{
+    border-bottom: 1px solid white;
 
 }
 
@@ -69,6 +83,13 @@ footer {
     text-decoration: none;
     padding: 1rem 12rem;
     margin: auto;
+    -webkit-box-shadow: 5px 6px 14px 2px rgba(255,255,255,0.55);
+    box-shadow: 5px 6px 14px 2px rgba(255,255,255,0.55);
+}
+.footer__title__contact>a:hover{
+    background-color: #670017;
+    color: white;
+
 }
 
 .copyright{
@@ -78,13 +99,6 @@ footer {
     height: 10vh;
 }
 
-.reseauxSociaux:after{
-    content: url("/src/img/icons8-facebook-50.png");
-}
-.reseauxSociaux:hover{
-    background-color: white;
-
-}
 .copyright__title{
     width: 75%;
     font-size: 1rem;

@@ -105,6 +105,7 @@ function mon_portfolio_styles() {
     if (is_page_template('single_project.php') || is_singular('project')) {
         wp_enqueue_style('single-project-css', get_template_directory_uri() . '/src/css/single_project.css' , [], time());
     }
+
     if (is_page_template('a_propos.php') || is_singular('project')) {
         wp_enqueue_style('a_propos-css', get_template_directory_uri() . '/src/css/a_propos.css' , [], time());
     }

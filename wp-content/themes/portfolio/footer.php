@@ -3,9 +3,8 @@
 <!DOCTYPE html>
 <html lang="fr-be">
 <head>
-    <meta charset="utf-8">
-    <!--    <title>--><?php //= wp_title('·', false, 'right') . get_bloginfo('name') ?><!--</title>--><?php //wp_head(); ?>
-    <title>Portfolio</title>
+    <meta charset="<?php bloginfo('charset'); ?>">
+    <title><?= wp_title('·', false, 'right') . get_bloginfo('name') ?></title>
     <link rel="icon" type="image/png" href="src/img/icone-portfolio-image.png">
     <meta name="keywords" content="portfolio, Projet-web, Julien, competence, formation hepl, "/>
     <meta name="author" content="Julien Gaspar"/>
@@ -16,6 +15,8 @@
 <!--    <link rel="stylesheet" href="./src/css/reset.css">-->
 <!--    <link rel="stylesheet" href="./src/css/footer.css">-->
     <!--    <script src="./src/js/main.js" type="module" defer></script>-->
+    <?php wp_head(); ?>
+
 </head>
 <body>
 <footer>
@@ -27,18 +28,13 @@
         if ($image) :
             ?>
             <div class="logo_footer">
-                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
+                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="logo-doré">
                 <?php
                 $image_logo = get_field('logo_footer');
                 // var_dump($image); // temporaire pour voir ce qu'il y a dans le fichiers
-
-                if ($image_logo) :
-                    ?>
-                    <div class="logo_footer">
-                        <img src="<?php echo esc_url($image_logo['url']); ?>" alt="<?php echo esc_attr($image_logo['alt']); ?>">
-                    </div>
-                <?php endif; ?>
+                ?>
             </div>
+
         <?php endif; ?>
         <section class="footer__title">
             <h2>Mon Portfolio</h2>
@@ -59,14 +55,13 @@
         <section class="footer__title__contact">
             <h2 class="contact_title">M’envoyer un message</h2>
             <!--<a href="src/pages/Contact.php" class="lien-contact">Contactez mois</a>-->
-            <a href="<?php the_field('lien_bouton_footer', 'option'); ?>" class="lien-contact">Contactez-moi
+            <a href="<?php the_field('lien_bouton_footer', 'option'); ?>" class="lien-contact">
                 <?php the_field('texte_bouton_footer', 'option'); ?>
             </a>
         </section>
     </section>
     <section class="copyright">
-        <h2 class="copyright__title">Copyright Mon  CV  © 2024  C.V  | Contact | Vie  privée  </h2>
-        <p><?php the_field('copyright_footer', 'option'); ?></p>
+        <h2 class="copyright__title"><?php the_field('copyright_footer') ?></h2>
     </section>
 </footer>
 <?php wp_footer(); ?>

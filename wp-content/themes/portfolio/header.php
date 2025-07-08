@@ -17,25 +17,11 @@
 <body <?php body_class(); ?>>
 <nav class="nav__header">
     <h1 class="title__page">Titre invisible</h1>
-<!--    <ul class="redirections">-->
-        <!--
-        <li class="redirection"><a href="<?php the_field('lien_accueil', 'option'); ?>">Accueil</a></li>
-        <li><a href="<?= home_url() ?>" title="<?= __hepl('Se diriger vers la page d’accueil') ?>">Accueil</a></li>
-        <li class="redirection"><a href="<?php the_field('lien_projet', 'option'); ?>">Projet</a></li>
-        <li>
-            <?php foreach (dw_get_navigation_links('lien_projet') as $link): ?>
-        <li class="nav__item nav__item--<?= $link->icon; ?>">
-            <a href="<?= $link->href; ?>" class="nav__link">Projet</a>
-        </li>
-        <?php endforeach; ?>
-
-        <li class="redirection"><a href="<?php the_field('lien_a_propos', 'option'); ?>">propos</a></li>
-        <li class="redirection"><a href="<?php the_field('lien_contact', 'option'); ?>">Contact</a></li>-->
         <ul class="redirections">
-            <li><a href="<?php the_field('lien_accueil', 'option'); ?>">Accueil</a></li>
-            <li><a href="<?php the_field('lien_projet', 'option'); ?>">Projet</a></li>
-            <li><a href="<?php the_field('lien_a_propos', 'option'); ?>">propos</a></li>
-            <li><a href="<?php the_field('lien_contact', 'option'); ?>">Contact</a></li>
+            <li class="redirection" id="accueil"><a href="<?php the_field('lien_accueil', 'option'); ?>">Accueil&nbsp;</a></li>
+            <li class="redirection" id="projet"><a href="<?php the_field('lien_projet', 'option'); ?>">Projet&nbsp;</a></li>
+            <li class="redirection" id="propos"><a href="<?php the_field('lien_a_propos', 'option'); ?>">propos&nbsp;</a></li>
+            <li class="redirection" id="contact"><a href="<?php the_field('lien_contact', 'option'); ?>">Contact&nbsp;</a></li>
         </ul>
 </nav>
 </body>
