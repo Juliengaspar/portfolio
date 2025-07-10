@@ -32,7 +32,7 @@ get_header();
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
     <article class="bloc-projet">
         <!-- Titre du projet -->
-        <h1>Projets</h1>
+        <h1>Projetstitile__page</h1>
 
         <!-- Sous-titre du projet (ACF) -->
         <?php if ($sous_titre = get_field('sous_titre')) : ?>

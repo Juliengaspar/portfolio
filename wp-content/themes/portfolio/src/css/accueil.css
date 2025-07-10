@@ -1,21 +1,16 @@
 body{
     /*cursor: url('./src/img/svg/cursor-balle-ping.svg') 16 16, auto;*/
-    cursor: url('./src/img/svg/cursor-balle-ping.svg') 16 16, auto;
+    /*cursor: url('./src/img/svg/cursor-balle-ping.svg') 16 16, auto;    */
     font-size: 16px;
-    background-color:#8C9CCD;
-    color: #000000;
+
 }
+
+a{
+    cursor: pointer;
+}
+
 .accueil{
-    margin: 5%;
-
-}
-
-.accueil>h1::after{
-    content: PORTFOLIO;
-    font-size: 3rem;
-    background-color: black;
-
-
+    margin: 5% 0;
 
 }
 
@@ -36,9 +31,8 @@ h3{
     width: 100%;
 }
 
-.balle{
+.titile__page{
     width: 100%;
-    position: relative;
 }
 
 .balle__img__animation{
@@ -46,7 +40,6 @@ h3{
     width: 5%; /* adapte à ta taille */
     height: auto;
     animation: rouler 10s  infinite;
-    margin-top: -10%;
 }
 /* Animation qui fait aller-retour avec rotation */
 @keyframes rouler {
@@ -65,13 +58,30 @@ h3{
 }
 
 .logo__dore{
-    margin-top: -50%;
 }
+.img__logo__dore{
 
+    margin: 5% -350% 5% ;
+
+}
 .balle__animation>img{
     width: 10%;
     height: 10%;
     margin-top: -10%;
+}
+
+.titile__page,
+.projets__liste__titile,
+.animation__metier>h2{
+    font-size: 3rem;
+    background-color: black;
+    color: white;
+    text-align: center;
+    margin: 2.5% 0;
+    padding: 2.5% 0;
+    font-weight: 800;
+    width: 100%;
+    height: auto;
 }
 
 .acceuille__about__me{
@@ -84,11 +94,40 @@ h3{
     font-size: 3rem;
     width: auto;
     border-bottom: 5px solid #EBC480;
+    margin-bottom: 5%;
 }
 .about__me{
     font-size: 1rem;
     max-width: 500px;
 }
+
+.projets{
+    display: inline;
+}
+
+.carte-projet{
+    background-color: black;
+    color: white;
+    padding: 2.5%;
+    margin: 10%;
+    width: 25%;
+    height: auto;
+}
+
+.projet__title{
+    color: #E5C589;
+    font-size: 2rem;
+}
+
+.projet__liens{
+    text-decoration: none;
+    color: white;
+}
+.projet__liens::after{
+content: url("../img/balle-icone.png");
+top: 10px;
+}
+
 .metiers{
     width: 50%;
     margin-left: 2.5%;
@@ -111,27 +150,29 @@ h3{
     width: 60%;
     text-shadow: 7px 7px 4px rgba(235,196,128,0.52);
 }
-button{
+.bouton-projets{
     color: #000000;
-    font-size: 2rem;
+    font-size: 3rem;
     background-color: #E63946;
-    padding: 1.5%;
+    padding: 1%;
+    margin: 0 5%;
     border-radius: 5px;
     border-color: transparent;
-    width: 50%;
+    width: 100%;
+    text-decoration: none;
 }
-button:hover{
+.bouton-projets:hover{
     background-color: #6c000a;
     color: white;
 }
 
 .animation__metier>p:first-of-type{
     font-size: 3rem;
-    margin-top: 15%;
+    margin-top: 5%;
     margin-left: 10%;
 }
 .animation__metier>p:first-of-type:before {
-    content: url("./src/img/balle-icone.png");
+    content: url("../img/balle-ping-pong-orange.png");
 }
 .animation__metier>p:last-of-type{
     font-size: 3rem;
@@ -139,7 +180,7 @@ button:hover{
     margin-left: 10%;
 }
 .animation__metier>p:last-of-type:after {
-    content: url("./src/img/balle-icone.png");
+    content: url("../img/balle-ping-pong-orange.png");
 }
 
 
@@ -154,7 +195,7 @@ button:hover{
     padding: 10px 0;
 }
 .animations__text:first-of-type::before{
-    content: url("./src/img/balle-icone.png");
+    content: url("../img/balle-ping-pong-orange.png");
     position: relative;
 
 }

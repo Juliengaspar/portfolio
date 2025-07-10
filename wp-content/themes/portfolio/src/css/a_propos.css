@@ -3,6 +3,12 @@ body{
     font-family: Didot;
 }
 
+a{
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+}
+
 .about__me__title{
     background-color: black;
     font-size: 3rem;
@@ -15,7 +21,6 @@ body{
 
 .title{
     font-size: 2rem;
-    margin-left: 5%;
     font-style: italic;
     margin-bottom: 5%;
     font-weight: 700;
@@ -42,7 +47,6 @@ a{
 
 .about__me__content>h2{
     font-size: 2rem;
-    margin-left: 5%;
     font-style: italic;
     margin-bottom: 5%;
     font-weight: 700;
@@ -71,6 +75,9 @@ a{
     background-color: red;
     padding: 1rem;
     overflow-x: auto; /* pour scroll horizontal si trop large */
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 
 .image__competence {
@@ -96,15 +103,32 @@ a{
 
 /*Parti lisgte de parcours scholaire*/
 .school__path{
-
     align-items: center;
     justify-content: center;
     gap: 2rem;
 }
+.bloc__scolaire{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+
+.bloc__scolaire>h3,
+.bloc__scolaire>p{
+    font-size: 1.5rem;
+}
+
+.bloc__scolaire{
+    margin-bottom: 10%;
+}
+.titile__parcours{
+}
+.description{
+
+}
 
 .school__info{
-    display: flex;
-    margin-bottom: 5%;
+    margin: 5%;
 }
 .school__left{
     margin-left: 5%;
@@ -117,27 +141,24 @@ a{
     margin-left: 2%;
 }
 
-#histoire_art__archeologie .contenus__description{
-    margin-right: 75%;
-}
+
 .school__left>p{
     font-size: 1.1rem;
     margin: 2%;
 }
 
-.school-arrow {
+.school__arrow {
     width: 5%;
     height: 100%;
     background-color: white;
     position: relative;
 }
 
-.school-arrow::before {
+.school__arrow::before {
     content: '|';
     position: absolute;
     top: -10px;
     left: 50%;
-    transform: translateX(-50%);
     border: solid white;
     border-width: 0 6px 6px 0;
     display: inline-block;
@@ -157,9 +178,8 @@ a{
     font-weight: 800;
 }
 .passion__me{
-    width: 50%;
+    display: flex;
     margin: 5%;
-    line-height: 3vh;
 }
 .passion__me>h2{
     width: 50%;
@@ -168,8 +188,6 @@ a{
     font-size: 1rem;
     width: 50%;
 }
-.passion__me__img{
-    display: flex;
-    margin-left: 90%;
-    align-items: center;
+.passion__image{
+    margin: -10% 5% ;
 }

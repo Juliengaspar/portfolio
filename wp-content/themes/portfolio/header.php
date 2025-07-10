@@ -16,7 +16,6 @@
 </head>
 <body <?php body_class(); ?>>
 <nav class="nav__header">
-    <h1 class="title__page">Titre invisible</h1>
         <ul class="redirections">
             <li class="redirection" id="accueil"><a href="<?php the_field('lien_accueil', 'option'); ?>">Accueil&nbsp;</a></li>
             <li class="redirection" id="projet"><a href="<?php the_field('lien_projet', 'option'); ?>">Projet&nbsp;</a></li>

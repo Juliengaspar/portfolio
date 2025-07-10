@@ -7,7 +7,7 @@
 
 <section class="about__me">
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-        <h1><?php the_field('titile__apropos'); ?></h1>
+        <h1 class="about__me__title"><?php the_field('titile__apropos'); ?></h1>
 
         <section class="about__me__content">
             <h2 class="title">À propos de moi</h2>
@@ -45,37 +45,56 @@
         <section class="school">
             <h2 class="title">Mon parcours scolaire</h2>
             <div class="school__info">
-                <section>
-                    <h3><?php the_field('titile__parcous__web'); ?></h3>
+                <div class="school__arrow">
+
+                </div>
+                <section class="bloc__scolaire">
+                    <h3 class="titile__parcours"><?php the_field('titile__parcous__web'); ?></h3>
                     <p><?php the_field('date__parcous__web'); ?></p>
-                    <p><?php the_field('name__school__web'); ?></p>
-                    <p><?php the_field('descripiton__web'); ?></p>
+                    <p><a href="https://www.hepl.be/fr"><?php the_field('name__school__web'); ?></p>
+                    <div class="description">
+                        <p><?php the_field('descripiton__web'); ?></p>
+                    </div>
                 </section>
+                <div class="school__arrow">
 
-                <section>
-                    <p><?php the_field('description__school__art'); ?></p>
-                    <h3><?php the_field('titile__parcous__art'); ?></h3>
+                </div>
+
+                <section class="bloc__scolaire">
+                    <h3 class="titile__parcours"><?php the_field('titile__parcous__art'); ?></h3>
                     <p><?php the_field('date__parcous__art'); ?></p>
-                    <p><?php the_field('name__school__art'); ?></p>
+                    <p><a href="https://www.programmes.uliege.be/cocoon/20252026/formations/bref/P1HISA01.html"><?php the_field('name__school__art'); ?></a><?php the_field('name__school__art'); ?></p>
+                    <div class="description">
+                    <p><?php the_field('description__school__art'); ?></p>
+                    </div>
                 </section>
+                <div class="school__arrow">
 
-                <section>
-                    <h3><?php the_field('name__school__secondary'); ?></h3>
+                </div>
+                <section class="bloc__scolaire">
+                    <h3 class="titile__parcours"><?php the_field('name__school__secondary'); ?></h3>
                     <p><?php the_field('date__school__secondary'); ?></p>
-                    <p><a href="<?php the_field('link__school__secondary'); ?>"><?php the_field('link__school__secondary'); ?></a></p>
+                    <p><a href="https://arverdi.be/arvv"><?php the_field('link__school__secondary'); ?></a></p>
+                    <div class="description">
                     <p><?php the_field('description__school__secondary'); ?></p>
+                    </div>
                 </section>
+                <div class="school__arrow">
+
+                </div>
             </div>
         </section>
 
         <!-- Passions -->
         <section class="passion__me">
+            <div>
             <h2 class="title">Mes passions</h2>
             <p><?php the_field('description__passion'); ?></p>
+            </div>
 
             <!-- Image d'introduction -->
             <?php
-            $image_loisir = get_field('passion__image');
+                $image_loisir = get_field('passion__image');
             // var_dump($image); // temporaire pour voir ce qu'il y a dans le fichiers
 
             if ($image_loisir) :

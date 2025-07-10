@@ -28,9 +28,8 @@
         if ($image) :
             ?>
             <div class="logo_footer">
-                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="logo-doré">
+                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="logo__dore__footer">
                 <?php
-                $image_logo = get_field('logo_footer');
                 // var_dump($image); // temporaire pour voir ce qu'il y a dans le fichiers
                 ?>
             </div>
