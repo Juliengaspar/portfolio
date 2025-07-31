@@ -110,7 +110,12 @@ h3{
     color: white;
     padding: 2.5%;
     margin: 10%;
-    width: 25%;
+    height: auto;
+}
+.liste-projets{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    width: auto;
     height: auto;
 }
 
@@ -127,7 +132,13 @@ h3{
 content: url("../img/balle-icone.png");
 top: 10px;
 }
+.projet__liens::after:hover{
+content: url("../img/balle-icone.png");
 
+}
+.projet__liens:hover{
+    border-bottom: 1px solid white;
+}
 .metiers{
     width: 50%;
     margin-left: 2.5%;
@@ -150,6 +161,8 @@ top: 10px;
     width: 60%;
     text-shadow: 7px 7px 4px rgba(235,196,128,0.52);
 }
+
+
 .bouton-projets{
     color: #000000;
     font-size: 3rem;
@@ -164,6 +177,15 @@ top: 10px;
 .bouton-projets:hover{
     background-color: #6c000a;
     color: white;
+}
+
+.animation__metier{
+margin: 10% 0;
+}
+
+.animation__metier > .metier {
+    padding-right: 2em;                   /* un peu d'espace pour la transition */
+    animation: defilement-rtl 15s infinite linear;
 }
 
 .animation__metier>p:first-of-type{
@@ -197,23 +219,29 @@ top: 10px;
 .animations__text:first-of-type::before{
     content: url("../img/balle-ping-pong-orange.png");
     position: relative;
-
 }
 
-.animation__text {
-    display: inline-block;
-    padding-left: 100%;
-    animation: scroll-right 10s linear infinite;
-    font-size: 24px;
-    color: black;
+#metier__web{
+    animation: defilementWeb 15s linear infinite;
 }
-
-@keyframes scroll-right {
-    0% {
-        transform: translateX(-100%) ;
+@keyframes defilementWeb {
+    0%{
+        transform: translateX(0%);
     }
-    100% {
+    90%{
+        transform: translateX(100%);
+
+    }
+}
+#metier__designer{
+    animation: defilementdesigner 15s linear infinite;
+}
+@keyframes defilementdesigner {
+    0%{
         transform: translateX(100%);
     }
+    90%{
+        transform: translateX(0%);
 
+    }
 }

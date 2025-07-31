@@ -88,8 +88,12 @@ Template Name: Accueil
 
 <section class="animation__metier">
     <h2>Mon metiers</h2>
-    <p class="metier"><?php the_field("metiers__web") ?></p>
-    <p class="metier"><?php the_field("metiers__designer") ?></p>
+    <p class="metier" id="metier__web">
+        <?php the_field("metiers__web") ?>&nbsp;
+    </p>
+    <p class="metier" id="metier__designer">
+        <?php the_field("metiers__designer") ?>&nbsp;
+    </p>
 </section>
 
 <?php get_footer(); // Inclut le footer.php ?>

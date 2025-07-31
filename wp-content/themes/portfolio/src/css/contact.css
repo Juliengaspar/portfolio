@@ -1,7 +1,17 @@
 body{
     background-color: #8C9CCD;
-    margin: 5%;
     font-family: Didot;
+}
+
+h1{
+    text-align: center;
+    font-size: 3rem;
+    background-color: black;
+    color: white;
+    padding: 2rem 3rem;
+    margin:5% 0;
+    width: 100%;
+    height: auto;
 }
 
 h2{
@@ -13,27 +23,49 @@ h2{
 .contact{
     display: flex;
 }
-.form{
 
-    width: 40%;
+.titile__bloc__form{
+    font-style: italic;
+    font-size: 2.5rem
+}
+
+.info__form{
+    margin-left: 10%;
+    margin-bottom: 5%;
+}
+
+.text__form{
+    font-style: italic;
+    font-size: 2rem;
+}
+
+.form{
+    margin: 0 10%;
+    width: auto;
+    padding: 2% 5%;
     height: auto;
     background-color: black;
     color: white;
 }
 .form__elements{
-    margin: 5%;
+    margin: 5% auto;
 }
 .form__elements>label{
     display: block;
     margin-bottom: 1%;
 }
-.subjectMessage{
+#form__sujet>label{
     background-color: black;
     color: white;
 
 }
-.subjectMessage>select{
+#form__sujet>select{
     border: 1px solid #E5C589;
+}
+
+textarea{
+    background-color: black;
+    color: #E5C589;
 }
 
 span{
@@ -44,13 +76,23 @@ input{
     background-color: black;
     border: 1px solid #E5C589;
 }
+input:hover{
+    background-color: white;
+    color: black;
+}
 button{
     background-color: #E63946;
     color: white;
     border: none;
+    padding: 2% 5%;
+}
+button:hover{
+    background-color: #C0002A;
 }
 .coordonnees{
-    margin-left: 60%;
+    width: 75%;
+    height: auto;
+
 }
 .coordonnee__info{
     margin-bottom: 2%;
@@ -66,4 +108,21 @@ button{
 li>img{
     width: 25%;
     height: 50%;
+}
+
+#email{
+    border-bottom: 1px solid black;
+}
+#email::before{
+    content: url("../img/icone-email.png");
+}
+#number__tel{
+
+}
+#number__tel::before{
+    content: url("../img/icone-tel.png");
+}
+#adresse::before{
+    content: url("../img/icone-maps.png");
+
 }

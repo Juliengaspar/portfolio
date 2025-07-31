@@ -48,7 +48,7 @@
                 <div class="school__arrow">
 
                 </div>
-                <section class="bloc__scolaire">
+                <section class="bloc__scolaire" id="parcoursWeb">
                     <h3 class="titile__parcours"><?php the_field('titile__parcous__web'); ?></h3>
                     <p><?php the_field('date__parcous__web'); ?></p>
                     <p><a href="https://www.hepl.be/fr"><?php the_field('name__school__web'); ?></p>
@@ -60,7 +60,7 @@
 
                 </div>
 
-                <section class="bloc__scolaire">
+                <section class="bloc__scolaire" id="parcoursArt">
                     <h3 class="titile__parcours"><?php the_field('titile__parcous__art'); ?></h3>
                     <p><?php the_field('date__parcous__art'); ?></p>
                     <p><a href="https://www.programmes.uliege.be/cocoon/20252026/formations/bref/P1HISA01.html"><?php the_field('name__school__art'); ?></a><?php the_field('name__school__art'); ?></p>
@@ -71,7 +71,7 @@
                 <div class="school__arrow">
 
                 </div>
-                <section class="bloc__scolaire">
+                <section class="bloc__scolaire" id="parcoursSecondary">
                     <h3 class="titile__parcours"><?php the_field('name__school__secondary'); ?></h3>
                     <p><?php the_field('date__school__secondary'); ?></p>
                     <p><a href="https://arverdi.be/arvv"><?php the_field('link__school__secondary'); ?></a></p>

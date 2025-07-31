@@ -94,15 +94,15 @@ function mon_portfolio_styles() {
         wp_enqueue_style('accueil-css', get_template_directory_uri() . '/src/css/accueil.css' , [], time());
     }
 
-    if (is_page_template('contact.php')) {
+    if (is_page_template('Contact.php')) {
         wp_enqueue_style('contact-css', get_template_directory_uri() . '/src/css/contact.css' , [], time());
     }
 
-    if (is_page_template('projets.php')) {
+    if (is_page_template('Projet.php')) {
         wp_enqueue_style('projets-css', get_template_directory_uri() . '/src/css/projets.css' , [], time());
     }
 
-    if (is_page_template('single_project.php') || is_singular('project')) {
+    if (is_page_template('Single_Project.php') || is_singular('project')) {
         wp_enqueue_style('single-project-css', get_template_directory_uri() . '/src/css/single_project.css' , [], time());
     }
 

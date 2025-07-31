@@ -1,4 +1,8 @@
-<?php /* Template name: Template "contact*/ ?>
+<?php
+/*
+Template name: Template "contact
+*/
+?>
 <?php get_header(); ?>
 <?php
 // Traitement du formulaire
@@ -34,21 +38,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['envoyer'])) {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="fr-be">
-<head>
-    <meta charset="UTF-8">
     <title>Contact</title>
 <!--    <link rel="stylesheet" href="--><?php //echo get_template_directory_uri(); ?><!--/src/css/reset.css">-->
 <!--    <link rel="stylesheet" href="--><?php //echo get_template_directory_uri(); ?><!--/src/css/a_propos.css">-->
-</head>
 <body class="contact__me">
 <section>
-    <h1>Contact</h1>
+    <h1 class="form__titile">Contact</h1>
 
-    <section>
-        <h2 class="titile"><?php the_field("titile__page__form"); ?></h2>
-        <p><?php the_field("text__form"); ?></p>
+    <section class="forme__message">
+        <div class="info__form">
+        <h2 class="titile__bloc__form"><?php the_field("titile__page__form"); ?></h2>
+        <p class="text__form"><?php the_field("text__form"); ?></p>
+        </div>
 
         <?php if (!empty($success)): ?>
             <p style="color:<?php echo strpos($success, '✅') !== false ? 'green' : 'red'; ?>;"><?php echo $success; ?></p>
@@ -56,25 +57,26 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['envoyer'])) {
 
         <section class="contact">
             <form class="form" action="<?php echo esc_url($_SERVER['REQUEST_URI']); ?>" method="post">
-                <div class="form__elements">
+
+                <div class="form__elements" id="form__last__name">
                     <label for="lastName">Nom <span>*</span></label>
                     <input type="text" name="lastName" id="lastName" value="<?php echo esc_attr($_POST['lastName'] ?? ''); ?>">
                     <?php if (isset($errors['lastName'])): ?><p class="field__error"><?php echo $errors['lastName']; ?></p><?php endif; ?>
                 </div>
 
-                <div class="form__elements">
+                <div class="form__elements" id="form__first__name">
                     <label for="firstName">Prénom <span>*</span></label>
                     <input type="text" name="firstName" id="firstName" value="<?php echo esc_attr($_POST['firstName'] ?? ''); ?>">
                     <?php if (isset($errors['firstName'])): ?><p class="field__error"><?php echo $errors['firstName']; ?></p><?php endif; ?>
                 </div>
 
-                <div class="form__elements">
+                <div class="form__elements" id="form__email">
                     <label for="email">Email <span>*</span></label>
                     <input type="email" name="email" id="email" value="<?php echo esc_attr($_POST['email'] ?? ''); ?>">
                     <?php if (isset($errors['email'])): ?><p class="field__error"><?php echo $errors['email']; ?></p><?php endif; ?>
                 </div>
 
-                <div class="form__elements">
+                <div class="form__elements" id="form__sujet">
                     <label for="subjetMessage">Sujet</label>
                     <select id="subjetMessage" name="subjetMessage">
                         <option>Proposition de projet ou collaboration</option>
@@ -84,7 +86,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['envoyer'])) {
                     </select>
                 </div>
 
-                <div class="form__elements">
+                <div class="form__elements" id="form__message">
                     <label for="message">Message <span>*</span></label>
                     <textarea id="message" name="message" rows="5"><?php echo esc_textarea($_POST['message'] ?? ''); ?></textarea>
                     <?php if (isset($errors['message'])): ?><p class="field__error"><?php echo $errors['message']; ?></p><?php endif; ?>
@@ -98,9 +100,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['envoyer'])) {
             <section class="coordonnees">
                 <h2 class="coordonnee">Coordonnées</h2>
                 <ul>
-                    <li class="coordonnee__info"><?php the_field("email"); ?></li>
-                    <li class="coordonnee__info"><?php the_field("number__tel"); ?></li>
-                    <li class="coordonnee__info"><?php the_field("adresse"); ?></li>
+                    <li class="coordonnee__info" id="email"><?php the_field("email"); ?></li>
+                    <li class="coordonnee__info" id="number__tel"><?php the_field("number__tel"); ?></li>
+                    <li class="coordonnee__info" id="adresse"><?php the_field("adresse"); ?></li>
                 </ul>
             </section>
         </section>
@@ -108,4 +110,3 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['envoyer'])) {
 </section>
 <?php get_footer(); ?>
 </body>
-</html>
