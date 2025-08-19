@@ -28,16 +28,14 @@ nav li{
     margin: auto 7%;
 }
 nav li:hover{
-    background-color: black;
-    color: white;
     border-bottom: 1px solid white;
 }
 
 /* Séparateur particulier pour le dernier élément */
-nav li.redirection:last-child {
+nav li.redirection__header:last-child {
     background-color: black;
     clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%);
-    margin: 0 54%;
+    margin: 0 56%;
     padding: 2% 15% !important;
     width: auto;
     text-align: center;

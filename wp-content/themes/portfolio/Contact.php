@@ -43,11 +43,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['envoyer'])) {
 <!--    <link rel="stylesheet" href="--><?php //echo get_template_directory_uri(); ?><!--/src/css/a_propos.css">-->
 <body class="contact__me">
 <section>
-    <h1 class="form__titile">Contact</h1>
+    <h2 class="form__titile">Contact</h2>
 
     <section class="forme__message">
         <div class="info__form">
-        <h2 class="titile__bloc__form"><?php the_field("titile__page__form"); ?></h2>
+        <h3 class="titile__bloc__form"><?php the_field("titile__page__form"); ?></h3>
         <p class="text__form"><?php the_field("text__form"); ?></p>
         </div>
 
@@ -98,7 +98,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['envoyer'])) {
             </form>
 
             <section class="coordonnees">
-                <h2 class="coordonnee">Coordonnées</h2>
+                <h3 class="coordonnee">Coordonnées</h3>
                 <ul>
                     <li class="coordonnee__info" id="email"><?php the_field("email"); ?></li>
                     <li class="coordonnee__info" id="number__tel"><?php the_field("number__tel"); ?></li>

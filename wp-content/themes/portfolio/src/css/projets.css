@@ -96,33 +96,42 @@
 /* Fond général */
 .projets-container {
     background-color: #8c95cb; /* fond bleu mauve */
-    padding: 50px 20px;
     font-family: 'Georgia', serif;
 }
 
 /* Titre principal */
 .projets-titre {
+    font-family: Didot, 'arial', sans-serif;
     background-color: black;
-    color: white;
+    font-size: 3rem;
     text-align: center;
-    font-size: 36px;
-    padding: 20px;
-    margin: 0;
+    width: 100%;
+    margin: 5% 0;
+    color: white;
+    padding: 1.5rem;
+    font-weight: 100;
+}
+
+.categorie-section{
+    margin: 5%;
 }
 
 /* Titres de catégories */
 .categorie-titre {
+
     font-style: italic;
     font-size: 24px;
     color: #000;
     margin: 40px 0 20px;
 }
+.chiffre{
+    font-size: 2rem;
+}
 
 /* Grille de cartes */
 .cartes-projets {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: auto auto auto;
 }
 
 /* Carte individuelle */
@@ -145,9 +154,13 @@
 }
 
 /* Description */
-.carte-description {
-    font-size: 16px;
-    margin-bottom: 15px;
+.carte p {
+    font-size: 1rem;
+    margin-bottom: 5%;
+}
+.carte a {
+    font-size: 0.935rem;
+    margin-bottom: 5%;
 }
 
 /* Bouton lien */

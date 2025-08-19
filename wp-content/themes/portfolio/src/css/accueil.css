@@ -24,22 +24,25 @@ a{
     margin:0 0 15% 0;
     width: 100%;
     height: auto;
+    font-weight: 100;
+
 }
 h3{
     font-size: 3rem;
-    margin: 10% 5%;
     width: 100%;
 }
 
-.titile__page{
-    width: 100%;
+#accueil__portfolio{
+    margin-bottom: 2.5%;
 }
+
 
 .balle__img__animation{
     position: absolute;
     width: 5%; /* adapte à ta taille */
     height: auto;
     animation: rouler 10s  infinite;
+    margin-bottom: 10%;
 }
 /* Animation qui fait aller-retour avec rotation */
 @keyframes rouler {
@@ -48,7 +51,7 @@ h3{
         transform: rotate(0deg);
     }
     50% {
-        left: calc(100% ); /* largeur totale - taille balle */
+        left: calc(90% ); /* largeur totale - taille balle */
         transform: rotate(720deg);
     }
     100% {
@@ -58,10 +61,11 @@ h3{
 }
 
 .logo__dore{
+    margin-top: 10%;
 }
 .img__logo__dore{
 
-    margin: 5% -350% 5% ;
+    margin: 5% 10% 5% ;
 
 }
 .balle__animation>img{
@@ -73,55 +77,77 @@ h3{
 .titile__page,
 .projets__liste__titile,
 .animation__metier>h2{
-    font-size: 3rem;
+    font-family: Didot, 'arial', sans-serif;
     background-color: black;
-    color: white;
+    font-size: 3rem;
     text-align: center;
-    margin: 2.5% 0;
-    padding: 2.5% 0;
-    font-weight: 800;
     width: 100%;
-    height: auto;
+    margin: 5% 0;
+    color: white;
+    padding: 1.5rem;
+    font-weight: 100;
 }
 
 .acceuille__about__me{
     font-family: 'Didot';
-    margin-right: 5%;
-    margin-left: 75%;
+   display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 20%;
+    margin-bottom: 5%;
+    margin-top: 10%;
+}
 
+.about__me__text{
 }
 .name__complet{
     font-size: 3rem;
-    width: auto;
-    border-bottom: 5px solid #EBC480;
+    width: 100%;
     margin-bottom: 5%;
 }
-.about__me{
+.acceuille__about__me p{
     font-size: 1rem;
-    max-width: 500px;
+    width: 75%;
 }
 
 .projets{
-    display: inline;
+    margin: 5%;
 }
 
-.carte-projet{
-    background-color: black;
-    color: white;
-    padding: 2.5%;
-    margin: 10%;
-    height: auto;
-}
 .liste-projets{
     display: grid;
-    grid-template-columns: auto auto auto;
-    width: auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    height: auto;
+    grid-gap: 5%;
+}
+.carte-projet{
+    width: 80%;
+    background-color: black;
+    color: white;
+    margin: 5% 0;
     height: auto;
 }
 
 .projet__title{
     color: #E5C589;
     font-size: 2rem;
+}
+.carte-projet{
+    max-width: 500px;
+    width: 100%;
+    height: 100%;
+    padding: 1rem 0.5rem;
+}
+.carte-projet p{
+    width: 70%;
+    margin-bottom: 5%;
+    margin-left: 5%;
+}
+.carte-projet h3,
+.carte-projet a{
+    margin-top: 1%;
+    margin-bottom: 5%;
+    margin-left: 5%;
 }
 
 .projet__liens{
@@ -130,7 +156,6 @@ h3{
 }
 .projet__liens::after{
 content: url("../img/balle-icone.png");
-top: 10px;
 }
 .projet__liens::after:hover{
 content: url("../img/balle-icone.png");
@@ -156,7 +181,6 @@ content: url("../img/balle-icone.png");
 }
 
 .metier{
-    text-transform: uppercase;
     font-size: 3.5rem;
     width: 60%;
     text-shadow: 7px 7px 4px rgba(235,196,128,0.52);
@@ -165,14 +189,13 @@ content: url("../img/balle-icone.png");
 
 .bouton-projets{
     color: #000000;
-    font-size: 3rem;
+    font-size: 2rem;
     background-color: #E63946;
-    padding: 1%;
-    margin: 0 5%;
+    padding: 0.5%;
     border-radius: 5px;
     border-color: transparent;
-    width: 100%;
     text-decoration: none;
+    margin-left: 5%;
 }
 .bouton-projets:hover{
     background-color: #6c000a;
@@ -222,19 +245,19 @@ margin: 10% 0;
 }
 
 #metier__web{
-    animation: defilementWeb 15s linear infinite;
+    animation: defilementWeb 15s  infinite;
 }
 @keyframes defilementWeb {
     0%{
         transform: translateX(0%);
     }
-    90%{
+    100%{
         transform: translateX(100%);
 
     }
 }
 #metier__designer{
-    animation: defilementdesigner 15s linear infinite;
+    animation: defilementdesigner 15s  infinite;
 }
 @keyframes defilementdesigner {
     0%{

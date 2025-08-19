@@ -19,11 +19,18 @@ a{
     padding: 1.5rem;
 }
 
+
+.photo_profile{
+    margin-top: 5%;
+}
+
 .title{
+
     font-size: 2rem;
     font-style: italic;
     margin-bottom: 5%;
     font-weight: 700;
+    width: 100%;
 }
 .title>p{
     font-weight: 900;
@@ -31,26 +38,34 @@ a{
 a{
     cursor: pointer;
 }
-.about__me{
+.about__me__content{
     width: 100%;
-    display: flex;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 50px;
+    margin: 5% auto;
+    width: 90%;
+    line-height: 5vh;
+/*    display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+
+ */
+}
+.about__me__info{
+    width: 100%;
+}
+
+.photo_profile{
+    grid-column: 2;
+
 }
 
 .about__me__content{
-    width: 50%;
-    line-height: 1vh;
-    margin: 5%;
+
 }
 
-.about__me__content>h2{
-    font-size: 2rem;
-    font-style: italic;
-    margin-bottom: 5%;
-    font-weight: 700;
-}
 .about__me__content>p{
     font-size: 1.1rem;
     line-height: 1.6;
@@ -68,16 +83,24 @@ a{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.competences__bloc{
+    width: 100%;
+    margin: 5% auto;
+    width: 90%;
+    line-height: 5vh;
+}
 
 .competences {
     display: flex;
-    gap: 1rem; /* espace égal entre chaque image */
+    gap: 2rem; /* espace égal entre chaque image */
     background-color: red;
-    padding: 1rem;
+    padding: 2rem;
+    margin: 1% 5%;
     overflow-x: auto; /* pour scroll horizontal si trop large */
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    border-radius: 10px;
 }
 
 .image__competence {
@@ -87,17 +110,13 @@ a{
     width: 5%;
 }
 
-
-
-.competences{
-    background-color: #E63946;
-    border-radius: 20px;
-    overflow: hidden;
-    margin: 5%;
-
-}
 .competence__picture>li{
     display: inline;
+}
+
+
+.school__info{
+    margin: 10% 0.5%;
 }
 
 
@@ -107,10 +126,6 @@ a{
     justify-content: center;
     gap: 2rem;
 }
-.bloc__scolaire{
-    display: grid;
-    grid-template-columns: auto auto;
-}
 
 
 .bloc__scolaire>h3,
@@ -118,18 +133,41 @@ a{
     font-size: 1.5rem;
 }
 
+.school{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 20px;
+    margin: 5% auto;
+    width: 90%;
+    line-height: 5vh;
+}
+
 .bloc__scolaire{
-    margin-bottom: 10%;
+    margin-left: -30%;
+
 }
+
+.info--school{
+    width: auto;
+
+}
+
 .titile__parcours{
+    font-size: 1.5rem;
+    font-weight: 200;
+    margin-bottom: 1%;
 }
-.description{
+.bloc__scolaire p{
+    font-size: 1.5rem;
+    font-weight: 200;
+    margin-bottom: 1%;
+ }
+.description p{
+    font-size: 1rem;
+    font-weight: 100;
+    margin-bottom: 1.5%;
+}
 
-}
-
-.school__info{
-    margin: 5%;
-}
 .school__left{
     margin-left: 5%;
     width: 50%;
@@ -137,7 +175,7 @@ a{
 .school__left>h3{
     width: 100%;
     font-size: 1.5rem;
-    margin-bottom: 2%;
+    margin-bottom: 5%;
     margin-left: 2%;
 }
 
@@ -148,22 +186,12 @@ a{
 }
 
 .school__arrow {
-    width: 5%;
-    height: 100%;
-    background-color: white;
-    position: relative;
+
 }
 
 .school__arrow::before {
     content: '|';
-    position: absolute;
-    top: -10px;
-    left: 50%;
-    border: solid white;
-    border-width: 0 6px 6px 0;
-    display: inline-block;
-    padding: 10px;
-    transform: rotate(-135deg) translateX(-50%);
+
 }
 
 .school__description{
@@ -179,15 +207,18 @@ a{
 }
 .passion__me{
     display: flex;
-    margin: 5%;
+    margin: 5% auto;
+    width: 90%;
+    line-height: 5vh;
 }
-.passion__me>h2{
-    width: 50%;
-}
-.passion__me>p{
+
+.passion__me p{
     font-size: 1rem;
     width: 50%;
+    margin-left: 0;
 }
-.passion__image{
-    margin: -10% 5% ;
+.passion__image>img{
+    margin: 5% -15%;
+    width: 50%;
+    height: auto;
 }

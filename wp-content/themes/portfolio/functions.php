@@ -109,13 +109,18 @@ function mon_portfolio_styles() {
     if (is_page_template('a_propos.php') || is_singular('project')) {
         wp_enqueue_style('a_propos-css', get_template_directory_uri() . '/src/css/a_propos.css' , [], time());
     }
+    if (is_page_template('Single-Project.php') || is_singular('project')) {
+        wp_enqueue_style('Single-Project-css', get_template_directory_uri() . '/src/css/Single-Project.css' , [], time());
+    }
 
+if (is_page_template('front-page.php')) {
+    wp_enqueue_script('app-js', get_template_directory_uri() . '/assets/js/accueil.js', [], time());
+}
     // 3. Header et footer toujours présents
     wp_enqueue_style('header-css', get_template_directory_uri() . '/src/css/header.css' , [], time());
     wp_enqueue_style('footer-css', get_template_directory_uri() . '/src/css/footer.css' , [], time());
 }
 add_action('wp_enqueue_scripts', 'mon_portfolio_styles');
-
 
 
 

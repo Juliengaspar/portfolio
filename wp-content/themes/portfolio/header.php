@@ -16,10 +16,10 @@
 <body <?php body_class(); ?>>
 <nav class="nav__header">
         <ul class="redirections">
-            <li class="redirection" id="accueil"><a href="<?php the_field('lien_accueil', 'option'); ?>">Accueil&nbsp;</a></li>
-            <li class="redirection" id="projet"><a href="<?php the_field('lien_projet', 'option'); ?>">Projet&nbsp;</a></li>
-            <li class="redirection" id="propos"><a href="<?php the_field('lien_a_propos', 'option'); ?>">propos&nbsp;</a></li>
-            <li class="redirection" id="contact"><a href="<?php the_field('lien_contact', 'option'); ?>">Contact&nbsp;</a></li>
+            <li class="redirection__header" id="accueil"><a href="<?php the_field('lien_accueil', 'option'); ?>">Accueil&nbsp;</a></li>
+            <li class="redirection__header" id="projet"><a href="<?php the_field('lien_projet', 'option'); ?>">Projets</a></li>
+            <li class="redirection__header" id="propos"><a href="<?php the_field('lien_a_propos', 'option'); ?>">Profil</a></li>
+            <li class="redirection__header" id="contact"><a href="<?php the_field('lien_contact', 'option'); ?>">Contact&nbsp;</a></li>
         </ul>
 </nav>
 </body>

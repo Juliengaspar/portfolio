@@ -1,0 +1,72 @@
+.title__single__projet{
+    background-color: black;
+    color: white;
+    font-size: 3rem;
+    margin: 5% 0;
+    padding: 1rem;
+    text-align: center;
+}
+.titile__Proget__detailler{
+    font-size: 2rem;
+    font-style: italic;
+    margin: 0 5%;
+}
+.projet__text{
+}
+.projet__text h3{
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-style: italic;
+    margin-left: 5%;
+    margin-bottom: 10%;
+}
+.projet__text p{
+    margin-left: 5%;
+    line-height: 4vh;
+}
+.projet__info{
+    display: grid;
+    grid-template-columns: auto auto;
+    margin: 5%;
+    align-content: center;
+    align-items: center;
+}
+.projet__info h2{
+    font-size: 2rem;
+    font-style: italic;
+}
+
+.image-projet{
+    margin-left: -1%;
+    margin-top: -50%;
+}
+
+.image-projet img{
+    max-width: 510px;
+    width: 100%;
+    height: auto; !important;
+    margin-top: -5%;
+    width: auto; /* Maintient le ratio */
+    object-fit: cover; /* Recadre l'image sans la déformer */
+}
+.projet__text{
+    grid-column: 2;
+
+}
+
+.btn-decouvrir{
+    margin-left: 5%;
+    background-color: #C0002A;
+    color: white;
+    text-align: center;
+    align-items: center;
+    padding: 1rem;
+    text-transform: none;
+    text-decoration: none;
+
+}
+.btn-decouvrir:hover{
+    background-color: #590013;
+
+
+}

@@ -1,4 +1,8 @@
-<?php /* Template name: Template "a_propos"*/ ?>
+<?php
+/*
+Template name: Template "a_propos"
+*/
+?>
 <?php get_header(); ?>
 
 <!-- Fichiers CSS spécifiques -->
@@ -10,27 +14,28 @@
         <h1 class="about__me__title"><?php the_field('titile__apropos'); ?></h1>
 
         <section class="about__me__content">
-            <h2 class="title">À propos de moi</h2>
+            <div class="about__me__info">
+            <h2 class="title" id="aboute__me__title">À propos de moi</h2>
             <p class="about__me__text"><?php the_field('description__apropos'); ?></p>
+            </div>
+                    <!-- Image d'introduction -->
+                    <?php
+                    $image = get_field('photo_profile');
+                    // var_dump($image); // temporaire pour voir ce qu'il y a dans le fichiers
+
+                    if ($image) :
+                        ?>
+                        <div class="photo_profile">
+                            <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
+                        </div>
+                    <?php endif; ?>
+                </div>
         </section>
 
-        <div class="about__me__image">
-            <!-- Image d'introduction -->
-            <?php
-            $image = get_field('photo_profile');
-            // var_dump($image); // temporaire pour voir ce qu'il y a dans le fichiers
-
-            if ($image) :
-                ?>
-                <div class="photo_profile">
-                    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
-                </div>
-            <?php endif; ?>
-        </div>
 
         <!-- Compétences -->
-        <section>
-            <h2 class="title">Mes compétences</h2>
+        <section class="competences__bloc">
+            <h2 class="title" id="title__competence">Mes compétences</h2>
             <div class="competences">
                 <?php $galerie = get_field('galerie__picture__competence'); ?>
                 <?php if ($galerie) : ?>
@@ -43,45 +48,45 @@
 
         <!-- Parcours scolaire -->
         <section class="school">
-            <h2 class="title">Mon parcours scolaire</h2>
+            <h2 class="title" id="title__parcours__scolaire">Mon parcours scolaire</h2>
             <div class="school__info">
-                <div class="school__arrow">
-
-                </div>
                 <section class="bloc__scolaire" id="parcoursWeb">
-                    <h3 class="titile__parcours"><?php the_field('titile__parcous__web'); ?></h3>
+                    <div class="info--school">
+                    <h3 class="titile__parcours" id="title__web"><?php the_field('titile__parcous__web'); ?></h3>
                     <p><?php the_field('date__parcous__web'); ?></p>
-                    <p><a href="https://www.hepl.be/fr"><?php the_field('name__school__web'); ?></p>
+                    <p><?php the_field('name__school__web'); ?></p>
+                    </div>
                     <div class="description">
                         <p><?php the_field('descripiton__web'); ?></p>
                     </div>
                 </section>
-                <div class="school__arrow">
 
-                </div>
+                <div class="school__arrow"></div>
 
                 <section class="bloc__scolaire" id="parcoursArt">
-                    <h3 class="titile__parcours"><?php the_field('titile__parcous__art'); ?></h3>
+                    <div class="info--school">
+                    <h3 class="titile__parcours" id="title__art"><?php the_field('titile__parcous__art'); ?></h3>
                     <p><?php the_field('date__parcous__art'); ?></p>
-                    <p><a href="https://www.programmes.uliege.be/cocoon/20252026/formations/bref/P1HISA01.html"><?php the_field('name__school__art'); ?></a><?php the_field('name__school__art'); ?></p>
+                    <p><a href="https://www.programmes.uliege.be/cocoon/20252026/formations/bref/P1HISA01.html"><?php the_field('name__school__art'); ?></a></p>
+                    </div>
                     <div class="description">
                     <p><?php the_field('description__school__art'); ?></p>
                     </div>
                 </section>
-                <div class="school__arrow">
 
-                </div>
+                <div class="school__arrow"></div>
+
                 <section class="bloc__scolaire" id="parcoursSecondary">
-                    <h3 class="titile__parcours"><?php the_field('name__school__secondary'); ?></h3>
-                    <p><?php the_field('date__school__secondary'); ?></p>
-                    <p><a href="https://arverdi.be/arvv"><?php the_field('link__school__secondary'); ?></a></p>
+                    <div class="info--school">
+                        <h3 class="titile__parcours" id="title__secondary"><?php the_field('name__school__secondary'); ?></h3>
+                        <p><?php the_field('date__school__secondary'); ?></p>
+                        <p><a href="https://arverdi.be/arvv"><?php the_field('link__school__secondary'); ?></a></p>
+                    </div>
                     <div class="description">
                     <p><?php the_field('description__school__secondary'); ?></p>
                     </div>
                 </section>
-                <div class="school__arrow">
-
-                </div>
+                <div class="school__arrow"></div>
             </div>
         </section>
 
