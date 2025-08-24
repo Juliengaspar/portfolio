@@ -40,6 +40,10 @@ get_header();
         <?php endif; ?>
     </article>
 <?php endwhile; endif; ?>
+    <div class="scroll__animation">
+        <?php get_template_part('partials/logo/scroll'); ?>
+    </div>
+
 
 </main>
 

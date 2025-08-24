@@ -2,6 +2,14 @@ body{
     background-color: #8C9CCD;
     font-family: Didot;
 }
+body, a, button {
+    cursor: url('../img/balle-icone.png'), auto;
+}
+
+a:hover, button:hover {
+    cursor: url('../img/balle-icone.png'), pointer;
+}
+
 
 .form__titile{
     text-align: center;
@@ -143,4 +151,31 @@ button:hover{
     margin-right: 8px; /* Espacement à droite */
     position: relative;
 
+}
+.scroll-indicator {
+    text-align: center;
+}
+.scroll-indicator p{
+    margin-bottom: 2%;
+    font-size: 3rem;
+    font-style: italic;
+    font-weight: 800;
+}
+
+.scroll-indicator img {
+    animation: bounce 2s infinite;
+    width: 3%;
+    height: auto;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
 }

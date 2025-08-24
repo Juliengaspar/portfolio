@@ -56,5 +56,8 @@ get_header(); ?>
             </div>
         </section>
     </section>
+    <div class="scroll__animation">
+        <?php get_template_part('partials/logo/scroll'); ?>
+    </div>
 
 <?php get_footer(); ?>

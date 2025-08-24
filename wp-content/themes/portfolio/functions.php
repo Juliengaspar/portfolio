@@ -113,15 +113,46 @@ function mon_portfolio_styles() {
         wp_enqueue_style('Single-Project-css', get_template_directory_uri() . '/src/css/Single-Project.css' , [], time());
     }
 
-if (is_page_template('front-page.php')) {
-    wp_enqueue_script('app-js', get_template_directory_uri() . '/assets/js/accueil.js', [], time());
-}
+
+
+
+
+
     // 3. Header et footer toujours présents
     wp_enqueue_style('header-css', get_template_directory_uri() . '/src/css/header.css' , [], time());
     wp_enqueue_style('footer-css', get_template_directory_uri() . '/src/css/footer.css' , [], time());
 }
 add_action('wp_enqueue_scripts', 'mon_portfolio_styles');
 
+function mon_portfolio_scripts() {
+    // JavaScript principal
+    wp_enqueue_script('main-js', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), '1.0.0', true);
+
+    if (is_page_template('front-page.php')) {
+        wp_enqueue_script('accueil-js', get_template_directory_uri() . '/assets/js/accueil.js', [], time());
+    }
+    if (is_page_template('Contact.php')) {
+        wp_enqueue_script('contacte-js', get_template_directory_uri() . '/assets/js/contacte.js', [], time());
+    }
+
+    // Localisation pour passer des variables PHP à JS
+    wp_localize_script('theme-main', 'themeParams', array(
+        'ajaxUrl' => admin_url('admin-ajax.php'),
+        'nonce' => wp_create_nonce('theme_nonce')
+    ));
+}
+add_action('wp_enqueue_scripts', 'mon_portfolio_scripts');
+
+$manifestPath = get_theme_file_path('public/.vite/manifest.json');
+
+if (file_exists($manifestPath)) {
+    $manifest = json_decode(file_get_contents($manifestPath), true);
+}
+
+// Vérifier et ajouter le fichier JavaScript
+if (isset($manifest['wp-content/themes/portfolio/assets/js/contacte.js'])) {
+    wp_enqueue_script('dw', get_theme_file_uri('public/' . $manifest['wp-content/themes/portfolio/assets/js/contacte.js']['file']), [], null, true);
+}
 
 
 

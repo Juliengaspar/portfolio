@@ -32,6 +32,9 @@ Template name: Template "a_propos"
                 </div>
         </section>
 
+        <div class="scroll__animation">
+            <?php get_template_part('partials/logo/scroll'); ?>
+        </div>
 
         <!-- Compétences -->
         <section class="competences__bloc">

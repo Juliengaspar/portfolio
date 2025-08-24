@@ -51,6 +51,9 @@ Template Name: Accueil
                  </section>
             </section>
     </section>
+    <div class="scroll__animation">
+        <?php get_template_part('partials/logo/scroll'); ?>
+    </div>
     <section class="projets-liste">
         <h2 class="projets__liste__titile">Développements WEB</h2>
         <!-- Liste des projets (champ répéteur) -->

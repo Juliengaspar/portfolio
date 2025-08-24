@@ -61,6 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['envoyer'])) {
                 <div class="form__elements" id="form__last__name">
                     <label for="lastName">Nom <span>*</span></label>
                     <input type="text" name="lastName" id="lastName" value="<?php echo esc_attr($_POST['lastName'] ?? ''); ?>">
+                    <span id="aidePseudo"></span>
                     <?php if (isset($errors['lastName'])): ?><p class="field__error"><?php echo $errors['lastName']; ?></p><?php endif; ?>
                 </div>
 
@@ -108,5 +109,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['envoyer'])) {
         </section>
     </section>
 </section>
+<div class="scroll__animation">
+    <?php get_template_part('partials/logo/scroll'); ?>
+</div>
 <?php get_footer(); ?>
 </body>
